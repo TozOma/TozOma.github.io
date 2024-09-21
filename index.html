@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Material Hub</title>
+    <style>
+        body {
+            font-family: 'Aptos', sans-serif;
+            background-color: #fce4ec;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #ff80ab;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        nav {
+            background-color: #ff4081;
+            padding: 15px;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .content {
+            padding: 20px;
+        }
+        .upload-section, .file-list {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8bbd0;
+            border-radius: 10px;
+        }
+        .upload-section h2, .file-list h2 {
+            margin-top: 0;
+        }
+        input[type="file"] {
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .file-list ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .file-list ul li {
+            background-color: #ff80ab;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            text-align: center;
+        }
+        footer {
+            background-color: #ff80ab;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.add('hidden'));
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>My Study Materials</h1>
+        <p>Your engineering hub with a girly twist!</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('course1')">Course 1</a>
+        <a href="#" onclick="showSection('course2')">Course 2</a>
+        <a href="#" onclick="showSection('course3')">Course 3</a>
+    </nav>
+
+    <!-- Content -->
+    <div class="content">
+
+        <!-- Home Section -->
+        <div id="home" class="section">
+            <h2>Welcome to My Study Material Hub!</h2>
+            <p>Select a course to view and upload materials.</p>
+        </div>
+
+        <!-- Course 1 Section -->
+        <div id="course1" class="section hidden">
+            <h2>Course 1 Materials</h2>
+            <div class="upload-section">
+                <h3>Upload Your Files</h3>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload1" accept=".doc, .docx, .pdf">
+                    <p>Supported formats: .doc, .docx, .pdf</p>
+                </form>
+            </div>
+            <div class="file-list">
+                <h3>Available Study Files</h3>
+                <ul>
+                    <li>No files uploaded yet for Course 1.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Course 2 Section -->
+        <div id="course2" class="section hidden">
+            <h2>Course 2 Materials</h2>
+            <div class="upload-section">
+                <h3>Upload Your Files</h3>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload2" accept=".doc, .docx, .pdf">
+                    <p>Supported formats: .doc, .docx, .pdf</p>
+                </form>
+            </div>
+            <div class="file-list">
+                <h3>Available Study Files</h3>
+                <ul>
+                    <li>No files uploaded yet for Course 2.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Course 3 Section -->
+        <div id="course3" class="section hidden">
+            <h2>Course 3 Materials</h2>
+            <div class="upload-section">
+                <h3>Upload Your Files</h3>
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="fileUpload3" accept=".doc, .docx, .pdf">
+                    <p>Supported formats: .doc, .docx, .pdf</p>
+                </form>
+            </div>
+            <div class="file-list">
+                <h3>Available Study Files</h3>
+                <ul>
+                    <li>No files uploaded yet for Course 3.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Engineered with 💖 and precision screws!</p>
+    </footer>
+
+</body>
+</html>
