@@ -11,6 +11,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            display: none; /* Initially hide the content */
         }
         header {
             background-color: #ff80ab;
@@ -79,6 +80,17 @@
         }
     </style>
     <script>
+        // Password protection logic
+        window.onload = function() {
+            var password = prompt("Please enter the password to access this page:");
+            if (password === "SmallSailBoats!") {
+                document.body.style.display = "block"; // Show content if correct password is entered
+            } else {
+                alert("Incorrect password! You cannot access this page.");
+                document.body.innerHTML = ""; // Clear the content if the password is wrong
+            }
+        };
+
         function showSection(sectionId) {
             const sections = document.querySelectorAll('.section');
             sections.forEach(section => section.classList.add('hidden'));
