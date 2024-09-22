@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Automotive enginnering</title>
+    <title>Automotive Engineering</title>
     <style>
         body {
             font-family: 'Aptos', sans-serif;
@@ -12,6 +12,7 @@
             margin: 0;
             padding: 0;
             display: none; /* Initially hide the content */
+            overflow-y: auto; /* Allow vertical scrolling */
         }
         header {
             background-color: #ff80ab;
@@ -23,17 +24,21 @@
             font-size: 2.5em;
             margin: 0;
         }
-        nav {
-            background-color: #ff4081;
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
+       nav {
+    background-color: #ff4081;
+    padding: 15px;
+    text-align: center; /* Centers the entire navigation content */
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-block; /* Ensures the links are aligned properly */
+    text-align: center; /* Centers the text within each link */
+}
+
         .content {
             padding: 20px;
         }
@@ -71,9 +76,7 @@
             color: white;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            width: 100%; /* Removed position: fixed */
             height: 20px;
         }
         .hidden {
@@ -82,13 +85,13 @@
     </style>
     <script>
         // Password protection logic
-       // window.onload = function() {
-           // var password = prompt("Please enter the password to access this page:");
-         //   if (password === "SmallSailBoats!") {
-         //       document.body.style.display = "block"; // Show content if correct password is entered
-           // } else {
-             //   alert("Incorrect password! You cannot access this page.");
-             //   document.body.innerHTML = ""; // Clear the content if the password is wrong
+        window.onload = function() {
+            var password = prompt("Please enter the password to access this page:");
+            if (password === "SmallSailBoats!") {
+                document.body.style.display = "block"; // Show content if correct password is entered
+            } else {
+                alert("Incorrect password! You cannot access this page.");
+                document.body.innerHTML = ""; // Clear the content if the password is wrong
             }
         };
 
@@ -109,23 +112,24 @@
 
     <!-- Navigation -->
     <nav>
-        <a href="#" onclick="showSection('home')">Home</a>
-        <a href="#" onclick="showSection('ME50390')">ME50390</a>
-        <a href="#" onclick="showSection('ME50391')">ME50391</a>
-        <a href="#" onclick="showSection('ME50392')">ME50392</a>
-        <a href="#" onclick="showSection('ME50393')">ME50393</a>
-        <a href="#" onclick="showSection('ME50394')">ME50394</a>
-        <a href="#" onclick="showSection('ME50395')">ME50395</a>
-        <a href="#" onclick="showSection('ME50396')">ME50396</a>
-        <a href="#" onclick="showSection('ME50397')">ME50397</a>
-    </nav>
+    <a href="#" onclick="showSection('home')">Home</a>
+    <a href="#" onclick="showSection('ME50390')">ME50390</a>
+    <a href="#" onclick="showSection('ME50391')">ME50391</a>
+    <a href="#" onclick="showSection('ME50392')">ME50392</a>
+    <a href="#" onclick="showSection('ME50393')">ME50393</a>
+    <a href="#" onclick="showSection('ME50394')">ME50394</a>
+    <a href="#" onclick="showSection('ME50395')">ME50395</a>
+    <a href="#" onclick="showSection('ME50396')">ME50396</a>
+    <a href="#" onclick="showSection('ME50397')">ME50397</a>
+</nav>
+
 
     <!-- Content -->
     <div class="content">
 
         <!-- Home Section -->
         <div id="home" class="section">
-            <h2>Course stucture</h2>
+            <h2>Course structure</h2>
             <p>ME50390 Agile and effective working practices.</p>
             <p>ME50391 Towards zero emission propulsion.</p>
             <p>ME50392 Future intelligent vehicle platforms.</p>
@@ -134,9 +138,9 @@
             <p>ME50395 Propulsion systems group project.</p>
             <p>ME50396 Research project scoping.</p>
             <p>ME50397 Industry-linked research project.</p>
-            text-align: center;
         </div>
- <!-- ME50390 Section -->
+        
+        <!-- ME50390 Section -->
         <div id="ME50390" class="section hidden">
             <h2>ME50390 Materials</h2>
             <div class="upload-section">
@@ -153,137 +157,14 @@
                 </ul>
             </div>
         </div>
-        <!-- ME50391 Section -->
-        <div id="ME50391" class="section hidden">
-            <h2>ME50391 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload1" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50391.</li>
-                </ul>
-            </div>
-        </div>
 
-        <!-- ME50392 Section -->
-        <div id="ME50392" class="section hidden">
-            <h2>ME50392 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload2" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50392.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ME50393 Section -->
-        <div id="ME50393" class="section hidden">
-            <h2>ME50393 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload3" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50393.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ME50394 Section -->
-        <div id="ME50394" class="section hidden">
-            <h2>ME50394 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload2" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50394.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ME50395 Section -->
-        <div id="ME50395" class="section hidden">
-            <h2>ME50395 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload2" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50395.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ME50396 Section -->
-        <div id="ME50396" class="section hidden">
-            <h2>ME50396 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload2" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50396.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- ME50397 Section -->
-        <div id="ME50397" class="section hidden">
-            <h2>ME50397 Materials</h2>
-            <div class="upload-section">
-                <h3>Upload Your Files</h3>
-                <form action="#" method="POST" enctype="multipart/form-data">
-                    <input type="file" id="fileUpload2" accept=".doc, .docx, .pdf">
-                    <p>Supported formats: .doc, .docx, .pdf</p>
-                </form>
-            </div>
-            <div class="file-list">
-                <h3>Available Study Files</h3>
-                <ul>
-                    <li>No files uploaded yet for ME50397.</li>
-                </ul>
-            </div>
-        </div>
+        <!-- Add more sections here -->
 
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>Engineered with 💖 and Chatgpt</p>
+        <p>Engineered with 💖 and ChatGPT</p>
     </footer>
 
 </body>
